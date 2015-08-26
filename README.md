@@ -73,6 +73,7 @@ For example, instead of refreshing the page when a user upvotes or downvotes, we
 - [Git: Rebase vs Merge](http://gitguru.com/2009/02/03/rebase-v-merge-in-git/)
 - [Git Resources](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [Sessions and User Authentication](https://talks.devbootcamp.com/sessions-and-user-authentication) 
+- [Maurice's Agile Development lecture slides](../../../maurice-resources/tree/master/lectures/agile)
 - [Manifesto for Agile Practices](http://agilemanifesto.org/)
 - [Sample Scrum Board](http://amareshv.files.wordpress.com/2011/03/fairydustboard_20110324.jpg)
 - [Trello](https://trello.com/) - great resource to organize workflow within a group project
