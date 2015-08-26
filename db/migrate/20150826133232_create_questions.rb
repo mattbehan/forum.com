@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.text :title, null: false
       t.text :body, null: false
-      t.timestamps
+      t.timestamps null: false
   end
   add_index :questions, :user_id
 end
