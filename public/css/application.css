@@ -1,3 +1,33 @@
+body {
+  margin: 0;
+}
+
 nav {
   background-color: #232323;
+  height: 34px;
+  width: 100%;
+}
+
+.nav_bar {
+  width: 1000px;
+  margin: auto;
+}
+
+.nav_buttons {
+  float: right;
+  margin: 7px;
+}
+
+.nav_buttons a {
+  /*display: inline-block;*/
+  color: #e0e0e0;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  padding: 10px 7px 0px 7px;
+}
+
+form {
+  display: inline-block;
+  margin-left: 20px;
 }
