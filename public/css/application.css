@@ -43,3 +43,28 @@ img {
   height: 70px;
   width: 230px;
 }
+
+#main_menu {
+  height: 27px;
+  float: right;
+  margin-top: 43px;
+  list-style-type: none;
+  display: inline;
+}
+
+#main_menu li{
+  display: inline;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+#main_menu a {
+  background-color: #858d93;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px;
+}
+
+#main_menu a:hover {
+  background-color: orange;
+}
