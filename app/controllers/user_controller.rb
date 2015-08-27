@@ -1,5 +1,5 @@
 get "/register" do
-  erb :"users/register"
+  erb :"users/register", layout: false
 end
 
 # javascript to inform the user that they must enter a password with at least 8 chars, lowercase letters, uppercase, and numbers/sybmols
@@ -10,31 +10,29 @@ post "/register" do
   @password.validate_new_password
   @user = User.new(email: @email, password: @password, display_name: @display_name)
   if @user.save
-    redirect ""
+    redirect "/login"
+  else
+    erb :login, layout: false
   end
 end
 
 # delete profile should be done in Ajax
 
-get "/login" do
+# get "/login" do
 
-end
+# end
 
-post "/login" do
+# post "/login" do
 
-end
+# end
 
-get "/logout" do
+# get "/logout" do
 
-end
+# end
 
-post "/logout" do
+# post "/logout" do
 
-end
-
-get "/profile/" do
-
-end
+# end
 
 get "/users" do
   #show layout with the users button highlighted orange
