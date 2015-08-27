@@ -1,0 +1,28 @@
+<head>
+
+<link rel="stylesheet" href="/css/question_ask.css">
+</head>
+
+<div class="new_question_form_container">
+
+<form action="/questions" method="POST">
+
+<p>
+<label for="title">Title</label>
+<input type="text" placeholder= "What's your programming question?  Be specific." name="question[title]"/>
+</p>
+
+<p>
+<%= erb :"questions/_question_new" %>
+</p>
+
+<p>
+<label for="tags">Tags</label>
+<input type="text" name="tags"/>
+</p>
+
+<input type="submit" value="Post Your Question"/>
+<!-- <input type="checkbox">Send new responses to posts via email -->
+</form>
+
+</div>
