@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
+  include BCrypt
+
   has_many :votes, :as => :votable
 
   has_many :questions
@@ -11,12 +13,12 @@ class User < ActiveRecord::Base
   validates :password_hash, presence: true
 
   def password
-    @password ||= Password.new(hashed_password)
+    @password ||= Password.new(password_hash)
   end
 
   def password=(new_password)
     @password = Password.create(new_password)
-    self.hashed_password = @password
+    self.password_hash = @password
   end
 
   def authenticate password_entered

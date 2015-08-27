@@ -1,4 +1,4 @@
-get "/register" end
+get "/register" do
   erb :"users/register"
 end
 
@@ -8,8 +8,9 @@ post "/register" do
   @password = params[:password]
   @display_name = params[:display_name]
   @password.validate_new_password
-  @user = User.create
-
+  @user = User.new(email: @email, password: @password, display_name: @display_name)
+  if @user.save
+    redirect ""
   end
 end
 

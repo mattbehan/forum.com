@@ -4,6 +4,6 @@ class CreateAnswers < ActiveRecord::Migration
       t.text :body, null: false
       t.timestamps
     end
-    add_index :answers, :user_id
+    # add_index :answers, :user_id
   end
 end
