@@ -1,1 +1,33 @@
-<h1>THIS IS A QUESTION ABOUT CODING</h1>
+<div class="question_container">
+  <h1 class="question_title"><%= @question.title %></h1>
+
+  <div class="voting_container">
+    <a href="" class="vote_botton">&#65514</a>
+    </br>
+    <h1 id="vote_count">55</h1>
+    </br>
+    <a href="" class="vote_botton">&#65516</a>
+  </div>
+
+  <div class="question_body_container">
+    <p><%= @question.body %></p>
+  </div>
+</div>
+
+<div class="answer_container">
+
+  <div class="voting_container">
+    <a href="" class="vote_botton">&#65514</a>
+    </br>
+    <h1 id="vote_count">6</h1>
+    </br>
+    <a href="" class="vote_botton">&#65516</a>
+  </div>
+
+  <div class="answer_body_container">
+    <% @answers = Answer.where(question_id: @question.id) %>
+    <% @answers.each do |answer| %>
+      <p>answer</p>
+    <% end %>
+  </div>
+</div>
