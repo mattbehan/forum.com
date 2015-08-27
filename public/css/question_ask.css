@@ -4,6 +4,52 @@
 
 }
 
+.form_container {
+
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.title{
+
+  margin-bottom: 50px;
+  margin-right: 100px;
+
+}
+
+.title label {
+  font-weight: bold;
+  margin-right: 65px;
+
+}
+
+
+.tags {
+  margin-top: 50px;
+}
+
+.tags label {
+
+  font-weight: bold;
+}
+
+input[name="tags"] {
+
+  display: block;
+  margin: 5px 0 50px 0;
+  width: 750px;
+}
+
+input[name="question[title]"] {
+  width: 650px;
+  height: 25px;
+}
+
+input type="submit"
+
+
 /*label{
   float: left;
 }
