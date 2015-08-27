@@ -39,12 +39,21 @@ post "/logout" do
 
 end
 
+<<<<<<< HEAD
 # needs route to be changed
 get "/profile/" do
 
 end
 
 
+=======
+get "/users" do
+  #show layout with the users button highlighted orange
+  #get all the users from the db
+  #render an erb with an each loop to diplay every user in a div
+    #username, location
+end
+>>>>>>> master
 
 
 
