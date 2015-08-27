@@ -3,6 +3,12 @@
   width: 1000px;
 }
 
+.question_body_container {
+  /*float: left;*/
+  width: 660px;
+  display: inline-block;
+}
+
 .question_title {
   font-size: 24px;
   font-weight: normal;
@@ -19,7 +25,12 @@
   /*float: left;*/
 }
 
-.question_body_container {
+.answer_container {
+  margin: auto;
+  width: 1000px;
+}
+
+.answer_body_container {
   /*float: left;*/
   width: 660px;
   display: inline-block;
