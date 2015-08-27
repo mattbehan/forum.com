@@ -1,0 +1,27 @@
+<!-- note that white-space property is currently set to prewrap. Might want to change that if you are editing to be exactly like the css and html as from the website -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/users.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+  <title></title>
+</head>
+  <body><div class ="login-topbar"> <a href="/">Back to Stack Overflow</a></login-topbar>
+
+    <div id="formContainer" style="width:460px">
+
+      <form method="post" url="/login"> <label for="email">Email (required, but never shown) </label>
+      <input id="email" size="30" placeholder="you@example.com" name="email"/>
+
+      <label for="password">Password </label>
+      <input id="password" size="30" name="password" type="password" placeholder="********"/>
+
+      <input type="submit" value="Login">
+    </form>
+
+  </div>
+</body>
+
