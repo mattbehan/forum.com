@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 
   validates :display_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :password_hash, presence: true
+  # validates :password_hash, presence: true
+  validate :valid_new_password
 
   def password
     @password ||= Password.new(password_hash)
