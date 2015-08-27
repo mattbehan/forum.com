@@ -8,7 +8,7 @@ class Answer < ActiveRecord::Base
   validates :body, presence: true
 
   def has_user_voted_on_this_before? user_id
-    Vote.find_by(value: value, votable_type: self.class, user_id: user_id)
+    votes.find_by(user_id: user_id) != nil
   end
 
 

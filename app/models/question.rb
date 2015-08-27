@@ -8,8 +8,10 @@ class Question < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
+  # INPUT: user_id
+  # OUTPUT: true/false
   def has_user_voted_on_this_before? user_id
-    Vote.find_by(value: value, votable_type: self.class, user_id: user_id)
+    votes.find_by(user_id: user_id) != nil
   end
 
   def highest_voted_answers

@@ -19,4 +19,3 @@ end
 #answer.cast_vote
 #question.cast_vote
 #only be able to vote on question/answer once per user
-Vote.create

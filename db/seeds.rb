@@ -16,6 +16,20 @@ module Seed
       answer_body = Faker::Lorem.paragraph(3)
       Answer.create(body: answer_body, user_id: rand(1..15), question_id: rand(1..15))
     end
+
+    User.first.cast_vote(1,Answer.first)
+    User.second.cast_vote(1,Answer.first)
+    User.third.cast_vote(1,Answer.first)
+    User.fourth.cast_vote(1,Answer.first)
+    User.fifth.cast_vote(1,Answer.first)
+    User.first.cast_vote(1,Question.first)
+    User.second.cast_vote(1,Question.first)
+    User.third.cast_vote(1,Question.first)
+    User.fourth.cast_vote(1,Question.first)
+    User.fifth.cast_vote(1,Question.first)
+
+
+
   end
 
 end

@@ -47,9 +47,12 @@ class User < ActiveRecord::Base
   end
 
    #INPUT: Value is an integer representing upvote/downvote, votable is the OBJECT that the user is voting on. called as user.cast_vote
-  # Output: no usable output. creates a vote object.
+  # Output: true/false on whether or not vote was created. creates a vote object.
   def cast_vote (value, votable)
-    self.votes.create(value: value, votable_id: votable.id,votable_type: votable.class.to_s, user_id: self.id)
+    unless votable.has_user_voted_on_this_before?
+      self.votes.create(value: value, votable_id: votable.id,votable_type: votable.class.to_s, user_id: self.id)
+    else false
+    end
   end
 
   #INPUT: called as user.reputation_from_posted_questions_and_answers
