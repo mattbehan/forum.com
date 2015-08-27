@@ -4,42 +4,56 @@ end
 
 # javascript to inform the user that they must enter a password with at least 8 chars, lowercase letters, uppercase, and numbers/sybmols
 post "/register" do
-  @email = params[:email]
-  @password = params[:password]
-  @display_name = params[:display_name]
-  @password.validate_new_password
-  @user = User.new(email: @email, password: @password, display_name: @display_name)
+  # @email = params[:email]
+  # @password = params[:password]
+  # @display_name = params[:display_name]
+  @user = User.new(params[:user])
   if @user.save
     redirect "/login"
   else
-    erb :login, layout: false
+    erb :"users/register", layout: false
   end
 end
 
 # delete profile should be done in Ajax
 
-# get "/login" do
+get "/login" do
+  erb :"users/login", layout: false
+end
 
-# end
+post "/login" do
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect "/users"
+  else
+    erb :"users/login", layout: false
+  end
+end
 
-# post "/login" do
+get "/logout" do
 
-# end
+end
 
-# get "/logout" do
+post "/logout" do
 
-# end
+end
 
-# post "/logout" do
+<<<<<<< HEAD
+# needs route to be changed
+get "/profile/" do
 
-# end
+end
 
+
+=======
 get "/users" do
   #show layout with the users button highlighted orange
   #get all the users from the db
   #render an erb with an each loop to diplay every user in a div
     #username, location
 end
+>>>>>>> master
 
 
 

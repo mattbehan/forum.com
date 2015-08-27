@@ -1,5 +1,35 @@
-.container{
-      font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+body{
+  line-height: 1.3;
+  font-size: 13px;
+  color: #2a2a28;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  position: relative;
+  background: #f6f6f6;
+  min-height:100%;
+  margin: 0;
+  display: block;
+  white-space: pre-wrap;
+
+}
+
+#formContainer{
       font-size: 13px;
       font-weight: bold;
+      border: 1px solid #e6e6e6;
+}
+
+label{
+  font: bold;
+}
+
+input{
+  height: 18px;
+}
+
+.login-topbar{
+  text-align:left;
+  padding: 10px 0 10px 45px;
+  border-bottom: 1px solid #e6e6e6;
+  background:#fff;
+  font-size: 12px;
 }
