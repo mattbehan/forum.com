@@ -1,5 +1,5 @@
 get '/' do
-  @top_questions = Question.all.sample(10)
+  @top_questions = Question.order(:created_at: :desc).limit(10)
   erb :index
 end
 
