@@ -19,6 +19,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'faker'
 gem 'bcrypt'
+gem 'gravatar_image_tag'
 
 group :test do
   gem 'shoulda-matchers'
