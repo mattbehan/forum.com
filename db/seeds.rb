@@ -1,6 +1,7 @@
 module Seed
 
   def self.run
+
     20.times do
       email = Faker::Internet.email
       display_name = Faker::Internet.user_name
@@ -10,10 +11,10 @@ module Seed
 
       question_title = (Faker::Lorem.sentence).chomp('.') + "?"
       question_body = Faker::Lorem.paragraph(7)
-      Question.create(title: question_title, body: question_body)
+      Question.create(title: question_title, body: question_body, user_id: rand(1..20))
 
       answer_body = Faker::Lorem.paragraph(3)
-      Answer.create(body: answer_body)
+      Answer.create(body: answer_body, user_id: rand(1..15), question_id: rand(1..15))
     end
   end
 

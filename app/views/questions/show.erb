@@ -15,7 +15,6 @@
 </div>
 
 <div class="answer_container">
-
   <div class="voting_container">
     <a href="" class="vote_botton">&#65514</a>
     </br>
@@ -27,7 +26,7 @@
   <div class="answer_body_container">
     <% @answers = Answer.where(question_id: @question.id) %>
     <% @answers.each do |answer| %>
-      <p>answer</p>
+      <p><%= answer.body %></p>
     <% end %>
   </div>
 </div>
