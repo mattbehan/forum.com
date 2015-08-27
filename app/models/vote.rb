@@ -5,7 +5,8 @@ class Vote < ActiveRecord::Base
   validates :votable_type, presence: true
   validates :value, presence: true
 
-
+  # INPUT: called from an array of votes: e.g. question.votes.score_from_votes
+  #OUTPUT: total score as an integer
 
 
 end
