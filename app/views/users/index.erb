@@ -1,7 +1,10 @@
-<h1>Users</h1>
-<% @users.each do |user| %>
-  <div id="user_index">
-    <a href="/users/<%= user.id %>"><%= user.display_name %></a>
-    <p><%= user.location %></p>
-  </div>
-<% end %>
+<div class="user_index_container">
+  <h1>Users</h1>
+  <% @users.each do |user| %>
+    <div id="user_index">
+      <img id="index_avatar" src="<%= Faker::Avatar.image %>" />
+      <a href="/users/<%= user.id %>"><%= user.display_name %></a>
+      <p><%= user.location %></p>
+    </div>
+  <% end %>
+</div>
