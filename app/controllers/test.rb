@@ -8,6 +8,6 @@ get "/users" do
 end
 
 get "/users/:id" do
-  @user = current_user
+  @user = User.find(params[:id])
   erb :'/users/show'
 end

@@ -25,8 +25,13 @@
     <!-- each ar a elements (links) that share a class (nav-button) -->
     <div class="nav_bar">
       <div class="nav_buttons">
-        <a href="">sign up</a>
-        <a href="">log in</a>
+        <% if session[:user_id] == nil %>
+            <a href="/register">sign up</a>
+            <a href="/login">log in</a>
+          <% else %>
+            <a href="/users>">profile</a>
+            <a href="/logout">logout</a>
+          <% end %>
         <form action="post">
           <input type="text" name="search" placeholder="search" style="width: 188px;" />
         </form>
