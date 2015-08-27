@@ -3,6 +3,7 @@ body {
   margin: 0;
 }
 
+/* NAV LAYOUT AND HEADER */
 nav {
   background-color: #232323;
   height: 34px;
@@ -75,11 +76,21 @@ form {
   background-color: orange;
 }
 
+/*TOP QUESTIONS SECTION OF HOME PAGE*/
+#top_questions {
+  color: #222;
+  font-size: 18px;
+  font-weight: 400;
+  float: left;
+}
+
+/* USER INDEX */
 #index_avatar {
   height: 48px;
   width: 48px;
 }
 
+/* USER PROFILE (SHOW) */
 #profile_avatar {
   height: 164px;
   width: 164px;
