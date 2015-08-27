@@ -1,14 +1,11 @@
-.new_question_form_container{
-
-  background-color: red;
-
-}
-
 .form_container {
 
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.3em;
 
 }
 
@@ -39,15 +36,30 @@ input[name="tags"] {
 
   display: block;
   margin: 5px 0 50px 0;
-  width: 750px;
+  width: 683px;
 }
 
 input[name="question[title]"] {
-  width: 650px;
+  width: 585px;
   height: 25px;
 }
 
-input type="submit"
+
+
+input[type="submit"]{
+
+  background: #009afd;
+  padding: .6em .8em;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 0;
+
+}
+
+input[type="submit"]:hover{
+
+  background-color: #0066CC;
+}
 
 
 /*label{
