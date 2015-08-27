@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Remember to create a migration!
   include BCrypt
 
-  has_many :votes, :as => :votable
+  has_many :votes
 
   has_many :questions
   has_many :answers
@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   # validates :password_hash, presence: true
   validate :valid_new_password
+
 
   def password
     @password ||= Password.new(password_hash)
@@ -43,6 +44,18 @@ class User < ActiveRecord::Base
       return false
     end
     return true
+  end
+
+   #INPUT: Value is an integer representing upvote/downvote, votable is the OBJECT that the user is voting on. called as user.cast_vote
+  # Output: no usable output. creates a vote object.
+  def cast_vote (value, votable)
+    self.votes.create(value: value, votable_id: votable.id,votable_type: votable.class.to_s, user_id: self.id)
+  end
+
+  #INPUT: called as user.reputation_from_posted_questions_and_answers
+  #OUTPUT: total score as integer
+  def reputation_from_posted_questions_and_answers
+    votes.sum(:value)
   end
 
 end
