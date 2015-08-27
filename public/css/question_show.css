@@ -1,0 +1,26 @@
+.question_container {
+  margin: auto;
+  width: 1000px;
+}
+
+.question_title {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.voting_container {
+  width: 46px;
+  height: 132px;
+  /*background-color: black;*/
+}
+
+.voting_container a {
+  font-size: 40px;
+  /*float: left;*/
+}
+
+.question_body_container {
+  /*float: left;*/
+  width: 660px;
+  display: inline-block;
+}
