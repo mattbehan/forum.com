@@ -1,0 +1,6 @@
+<h1>Top Questions</h1>
+<% @top_questions.each do |question| %>
+  <h4><%= question.title %></h4>
+  <p><%= question.body %></p>
+  <p>---------------------------------------------------------------</p>
+<% end %>
