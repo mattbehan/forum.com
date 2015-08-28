@@ -2,11 +2,9 @@
   <h1 class="question_title"><%= @question.title %></h1>
 
   <div class="voting_container">
-    <a href="" class="vote_botton">&#65514</a>
-    </br>
+    <div class="arrow-up"></div>
     <h1 id="vote_count">55</h1>
-    </br>
-    <a href="" class="vote_botton">&#65516</a>
+    <div class="arrow-down"></div>
   </div>
 
   <div class="question_body_container">
@@ -14,22 +12,28 @@
   </div>
 </div>
 
-<div class="answer_container">
-  <div class="voting_container">
-    <a href="" class="vote_botton">&#65514</a>
-    </br>
-    <h1 id="vote_count">6</h1>
-    </br>
-    <a href="" class="vote_botton">&#65516</a>
-  </div>
 
-  <div class="answer_body_container">
     <% @answers = Answer.where(question_id: @question.id) %>
-    <% @answers.each do |answer| %>
-      <p><%= answer.body %></p>
-    <% end %>
-  </div>
+
+<div id="answer_count_container">
+  <h4 id="answer_count"><%= @answers.count %> Answers</h4>
 </div>
+
+  <% @answers.each do |answer| %>
+    <div class="answer_container">
+
+      <div class="voting_container">
+        <div class="arrow-up"></div>
+        <h1 id="vote_count">55</h1>
+        <div class="arrow-down"></div>
+      </div>
+
+      <div class="answer_body_container">
+        <div class="answer_body"><%= answer.body %></div>
+      </div>
+
+    </div>
+<% end %>
 
 <div class="post_your_answer_container">
 
