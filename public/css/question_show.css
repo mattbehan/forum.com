@@ -35,3 +35,57 @@
   width: 660px;
   display: inline-block;
 }
+
+.post_your_answer_container {
+
+  margin: auto;
+  width: 1000px;  font-size: 18px;
+}
+
+.post_your_answer_container .header{
+  border-top: 1px dotted #ccc;
+  width: 718px;
+  padding: 8px 0 8px 0;
+}
+
+.post_your_answer_container .your_answer{
+
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.post_your_answer_container .answer_text_box{
+
+   margin-top: 15px;
+   padding-bottom: 20px;
+   border-bottom: 1px dotted #ccc;
+
+   margin-bottom: 50px;
+
+}
+
+.post_your_answer_container form {
+
+  margin-left: 0px;
+}
+
+.post_your_answer_container input[type="submit"] {
+
+  width: 133px;
+  height: 31px;
+  font-size: 11px;
+  font-family: Lucida Grande;
+  background: #009afd;
+  padding: .6em .8em;
+  color: white;
+  border-radius: 3px;
+  box-shadow: 0 1px 0;
+
+}
+
+input[type="submit"]:hover{
+
+  background-color: #0066CC;
+}
+
+
