@@ -5,8 +5,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null:false
       t.string :password_hash, null: false
       t.string :location
-      t.timestamps
+      t.integer :tokens
+      t.timestamps null: false
     end
-    # add_index :users, :email, :unique => true
+    add_index :users, :email, :unique => true
   end
 end

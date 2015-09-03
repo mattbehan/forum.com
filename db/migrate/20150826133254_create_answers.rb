@@ -4,8 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.text :body, null: false
       t.belongs_to :user, index: true
       t.belongs_to :question, index: true
-      t.timestamps
+      t.timestamps null: false
     end
-    # add_index :answers, :user_id
   end
 end

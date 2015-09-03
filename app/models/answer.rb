@@ -11,24 +11,11 @@ class Answer < ActiveRecord::Base
     votes.find_by(user_id: user_id) != nil
   end
 
-
-
   #to be called as question.vote_score/ answer.vote_score
   #OUTPUT: total score as an integer
   def vote_score
     votes.sum(:value)
   end
-
-  # def score_from_votes
-  #   self.reduce(0, :+){|sum, vote| sum + vote.value}
-  # end
-
-
-
-  # x=0 10.times do Vote.(value: rand(2), votable_type: "answer", user_id=x  ) x +=1 end
-
-  # user1=User.first, user2=User.second, question1=Question.first, question2
-
 
 end
 
@@ -41,5 +28,3 @@ end
 #question/answer.has_user_voted_on_this_before?
 #only be able to vote on question/answer once per user
 #user.reputation_from_posted_questions_and_answers
-
-

@@ -5,9 +5,8 @@ class CreateVotes < ActiveRecord::Migration
       t.integer :votable_id, null: false
       t.string :votable_type, null: false
       t.belongs_to :user, index: true
-      t.timestamps
+      t.timestamps null: false
     end
-    # add_index :votes, :votable_id, :user_id
-
+    add_index :votes, [:votable_id, :votable_id]
   end
 end

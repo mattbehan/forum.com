@@ -14,8 +14,9 @@ class Question < ActiveRecord::Base
     votes.find_by(user_id: user_id) != nil
   end
 
+  #returns an array of the answers sorted by their vote score in descending order
   def highest_voted_answers
-    answers.sort {|answer| answer.vote_score}
+    answers.sort_by {|answer| answer.vote_score}.reverse
   end
 
   #to be called as question.vote_score/ answer.vote_score. returns the score for a particular question/answer

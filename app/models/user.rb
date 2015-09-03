@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   # Output = Will just add errors to the password
   def valid_new_password
     if @new_password.length <= 8  || @new_password == nil || validations_for_new_password
-      self.errors.add("Please enter a valid password")
+      self.errors.add(:password, "must be at least 8 characters long and contain a capital, a lowercase and a digit.")
     end
   end
 
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
    #INPUT: Value is an integer representing upvote/downvote, votable is the OBJECT that the user is voting on. called as user.cast_vote
   # Output: true/false on whether or not vote was created. creates a vote object.
   def cast_vote (value, votable)
-    unless votable.has_user_voted_on_this_before?
+    unless votable.has_user_voted_on_this_before?(id)
       self.votes.create(value: value, votable_id: votable.id,votable_type: votable.class.to_s, user_id: self.id)
     else false
     end
@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   #INPUT: called as user.reputation_from_posted_questions_and_answers
   #OUTPUT: total score as integer
   def reputation_from_posted_questions_and_answers
-    votes.sum(:value)
+    answers.map{|answer| answer.votes.sum(:value)}.sum + questions.map{|question| question.votes.sum(:value)}.sum
   end
 
 end
