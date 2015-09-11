@@ -4,6 +4,11 @@ class Answer < ActiveRecord::Base
   belongs_to :question
 
   has_many :votes, :as => :votable
+  has_many :comments, :as => :commentable
+  has_many :edits, as: :editable
+  has_one :siding
+  has_one :side, through: :siding
+
 
   validates :body, presence: true
 

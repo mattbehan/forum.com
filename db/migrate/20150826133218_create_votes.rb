@@ -10,3 +10,5 @@ class CreateVotes < ActiveRecord::Migration
     add_index :votes, [:votable_id, :votable_id]
   end
 end
+
+# look up how to use ActiveRecord transactions
