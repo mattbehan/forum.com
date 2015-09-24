@@ -3,6 +3,8 @@ class CreateTaggings < ActiveRecord::Migration
     create_table :taggings do |t|
       t.belongs_to :tag, index: true
       t.belongs_to :question, index: true
+
+      t.timestamps null: false
     end
   end
 end

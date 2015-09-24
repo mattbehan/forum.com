@@ -10,13 +10,22 @@
   <title></title>
 </head>
   <body><div class ="login-topbar"> <a href="/">Back to Stack Overflow</a></login-topbar>
+
+
+
     <div id="formContainer" style="width:460px">
-      <form method="post" url="/register">
+   <div class="errors">
+  <% if @user.errors %>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  <% end %>
+</div>     <form method="post" url="/register">
       <label for="display_name">Display Name </label>
-      <input id="display_name" size="30" placeholder="J. Doe" name="user[display_name]"/>
+      <input id="display_name" size="30" placeholder="J. Doe" name="user[display_name]" value="<%=@user.display_name%>"/>
 
       <label for="email">Email (required, but never shown) </label>
-      <input id="email" size="30" placeholder="you@example.com" name="user[email]"/>
+      <input id="email" size="30" placeholder="you@example.com" name="user[email]" value="<%=@user.email%>"/>
 
       <label for="password">Password </label>
       <input id="password" size="30" name="user[password]" type="password" placeholder="********"/>

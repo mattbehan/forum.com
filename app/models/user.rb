@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   validates :display_name, presence: true
   validates :email, presence: true, uniqueness: true
   # validates :password_hash, presence: true
-  validate :valid_new_password
+  # validate :valid_new_password
 
 
   def password
@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
 
   def password=(new_password)
     @new_password = new_password
-    valid_new_password
     @password = Password.create(new_password)
     self.password_hash = @password
     # create instance variable for password
@@ -47,7 +46,7 @@ class User < ActiveRecord::Base
 
   # this method actually returns false if all the validations are passed, as it is a helper method for valid_new_password
   def validations_for_new_password
-    if @new_password.match(/[A-Z]/) && @new_password.match(/[a-z]/) && @new_password.match(/(\d)|(\p{S})/)
+    if @new_password.match(/[A-Z]/) && @new_password.match(/[a-z]/) && @new_password.match(/(\d|\p{S})/)
       return false
     end
     return true

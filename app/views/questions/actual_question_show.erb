@@ -1,0 +1,29 @@
+<div class="container">
+
+  <%= erb :"questions/_question_info", layout: false, locals: {question: @question} %>
+  <!-- show the comment form regardless of whether or not the user has commented on it yet -->
+<!--   <%= erb :"comments/_new", layout: false, locals: {answer: answer} %> -->
+</div>
+<div class = "owner-options-container">
+  <!-- <% if authenticated? %> -->
+    <!-- if the user has not answered the question, display the form for answering -->
+<!--     <% if !current_user.has_user_answered?(@question.id) && @question.user_id != sessions_user_id %>
+      <%= erb :"answers/_new", {layout: false, locals: {question: @question} }%>
+    <% end %> -->
+    <!-- show all the answers -->
+<!--     <% @answers.each do |answer| %>
+      <%= erb :"answers/_show", layout: false, locals: {answer: answer} %> -->
+      <!-- show the comment form regardless of whether or not the user has commented on it yet -->
+      <!-- <%= erb :"comments/_new", layout: false, locals: {answer: answer} %> -->
+      <!-- for each answer, show all that answers comments -->
+<!--       <% answer.comments.each do |comment| %>
+        <%= erb :"comments/_show", layout: false, locals: {answer: answer, comment: comment} %>
+      <% end %>
+
+    <% end %> -->
+
+  <% else %>
+
+    <a class="link-as-button" href = "/login"> Login to post an answer </a>
+  <% end %>
+</div>

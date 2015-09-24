@@ -1,58 +1,12 @@
-<div class="question_container">
-  <h1 class="question_title"><%= @question.title %></h1>
+<div class="container">
 
-  <div class="voting_container">
-    <div class="arrow-up"></div>
-    <h1 id="vote_count">55</h1>
-    <div class="arrow-down"></div>
-  </div>
+  <%= erb :"questions/_question_info", layout: false, locals: {question: @question} %>
 
-  <div class="question_body_container">
-    <p><%= @question.body %></p>
-  </div>
+</div>
+<div class = "owner-options-container">
+
+
+    <a class="link-as-button" href = "/login"> Login to post an answer </a>
 </div>
 
 
-    <% @answers = Answer.where(question_id: @question.id) %>
-
-<div id="answer_count_container">
-  <h4 id="answer_count"><%= @answers.count %> Answers</h4>
-</div>
-
-  <% @answers.each do |answer| %>
-    <div class="answer_container">
-
-      <div class="voting_container">
-        <div class="arrow-up"></div>
-        <h1 id="vote_count">55</h1>
-        <div class="arrow-down"></div>
-      </div>
-
-      <div class="answer_body_container">
-        <div class="answer_body"><%= answer.body %></div>
-      </div>
-
-    </div>
-<% end %>
-
-<div class="post_your_answer_container">
-
-  <form action="/questions/<%=@question.id%>/answers" method="POST">
-
-    <div class="header">
-      Know someone who can answer? Share a link to this question via email, <a href="https://plus.google.com/">Google+</a>, <a href="http://www.twitter.com">Twitter</a>, or <a href="www.facebook.com">Facebook</a>.
-    </div>
-    <div class="your_answer">
-      Your Answer
-    </div>
-
-    <div class="answer_text_box">
-      <textarea name ="answer[body]" rows="15" cols="50"></textarea>
-    </div>
-    <div class="submit_button">
-      <input type="submit" value="Post Your Answer"/>
-    </div>
-
-
-  </form>
-</div>

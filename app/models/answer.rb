@@ -9,7 +9,6 @@ class Answer < ActiveRecord::Base
   has_one :siding
   has_one :side, through: :siding
 
-
   validates :body, presence: true
 
   def has_user_voted_on_this_before? user_id

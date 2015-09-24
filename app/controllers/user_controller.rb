@@ -1,4 +1,5 @@
 get "/register" do
+  @user = User.new
   erb :"users/register", layout: false
 end
 
@@ -25,15 +26,10 @@ post "/login" do
   end
 end
 
-get "/logout" do
+post "/logout" do
   session[:user_id] = nil
-  erb :"index"
+  redirect "/"
 end
-
-# post "/logout" do
-#   sessions_user_id = nil
-#   redirect "/"
-# end
 
 get "/users" do
   @users = User.all

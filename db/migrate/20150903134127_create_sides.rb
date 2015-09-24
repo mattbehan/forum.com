@@ -4,6 +4,8 @@ class CreateSides < ActiveRecord::Migration
       t.belongs_to :question, index: true
       t.integer :author, index: true
       t.text :description, null: false
+
+      t.timestamps null: false
     end
   end
 end

@@ -7,6 +7,7 @@
 </div>
 
 <form id="question-form" action = "/questions" method = "post">
+  <input type="hidden" name="_method" value="put"/>
 
   <label for="title">Title: </label>
   <input id="title" size="30" name="question[title]" placeholder="What is your " value="<%= @question.title %>"/>
@@ -14,10 +15,6 @@
   <label for="body">Body: </label>
   <input id="body" size="30" name="question[body]" value="<%= @question.body %>"/>
 
-  <!-- add in search for tags
-  <label for = "tags"> Any tags you feel are relevant to this topic? </label>
-  <input type = "search" > </input> -->
-
-  <input type="submit" value="Create question" />
+  <input type="submit" value="Submit Changes" />
 
 </form>

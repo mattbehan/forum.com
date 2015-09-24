@@ -1,5 +1,5 @@
 <h1>Top Questions</h1>
-<% @top_questions.each do |question| %>
+<% @questions.each do |question| %>
   <h4><a href="/questions/<%= question.id %>" ><%= question.title %></a></h4>
   <p><%= question.body %></p>
   <p>---------------------------------------------------------------</p>
