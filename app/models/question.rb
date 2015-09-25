@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :edits, as: :editable
   has_many :sides
+  has_many :taggings
+  has_many :tags, through: :taggings
 
 
 
@@ -28,5 +30,6 @@ class Question < ActiveRecord::Base
   def vote_score
     votes.sum(:value)
   end
+
 
 end
